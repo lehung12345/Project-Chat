@@ -1,0 +1,265 @@
+/* Tổng thể khung chat */
+.chat-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5; /* Màu nền chung của ứng dụng */
+}
+
+/* Sidebar bên trái chứa profile và danh sách người dùng */
+.profile-sidebar {
+  width: 250px;
+  background-color: #fff; /* Màu nền trắng */
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Quan trọng để menu profile có thể đặt vị trí tuyệt đối */
+}
+
+/* Header trong sidebar, nơi hiển thị avatar và tên của người dùng hiện tại */
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #007bff; /* Màu nền xanh dương */
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.profile-header .profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.profile-header p {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Menu profile khi click vào avatar */
+.profile-menu {
+  position: absolute;
+  top: 65px; /* Vị trí của menu, ngay dưới header */
+  left: 10px; /* Căn lề trái */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 10; /* Đảm bảo menu nằm trên các thành phần khác */
+  min-width: 230px;
+  padding: 10px 0;
+}
+
+.profile-menu-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-menu-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.profile-menu h4 {
+  margin: 0;
+}
+
+.profile-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.profile-menu-item:hover {
+  background-color: #f0f2f5;
+}
+
+/* .profile-menu-item.logout {
+  color: #000000;
+} */
+
+button.profile-menu-item.logout {
+  background-color: transparent;
+  border: none;
+  padding: 12px 15px;
+  font-size: inherit;
+  color: #333;
+  border-radius: 0;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+
+.profile-menu-button {
+  width: calc(100% - 30px); /* Đảm bảo nút nằm trong menu */
+  margin: 10px 15px;
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* .profile-menu-button:hover {
+  background-color: #0056b3;
+} */
+
+.profile-menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+
+
+
+
+/* Danh sách người dùng */
+.user-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.user-item:hover, .user-item.active {
+  background-color: #e9ecef;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Khung chat chính */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 15px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.chat-header-info {
+  display: flex;
+  align-items: center;
+}
+
+.chat-header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.chat-header h4 {
+  margin: 0;
+  color: #333;
+}
+
+/* Các đoạn tin nhắn */
+.message-list {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background-image: url('/public/background3.jpg'); /* Thay đường dẫn này bằng URL của ảnh nền bạn muốn dùng */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.message {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 18px;
+  max-width: 60%;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.message.sent {
+  background-color: #dcf8c6; /* Màu xanh lá nhạt cho tin nhắn đã gửi */
+  align-self: flex-end;
+}
+
+.message.received {
+  background-color: #fff;
+  border: 1px solid #eee;
+  align-self: flex-start;
+}
+
+/* Input gửi tin nhắn */
+.message-input-area {
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  gap: 10px;
+  background-color: #f9f9f9;
+}
+
+.message-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.send-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #0056b3;
+}
+
+.empty-chat {
+  padding: 20px;
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}

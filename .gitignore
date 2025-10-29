@@ -1,0 +1,62 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# Environment files
+.env
+**/.env
+
+# Uploads, logs, and temp files
+uploads/
+**/uploads/
+*.log
+*.tmp
+
+# Build and dist folders
+build/
+dist/
+coverage/
+
+# OS & Editor junk files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.zip
+
+# React build output
+chat-frontend/build/
+frontend/build/
+
+
+
+
+# Visual Studio and local IDE files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Environment & dependencies
+.env
+node_modules/
+**/node_modules/
+
+# Uploads, logs, temp
+uploads/
+*.log
+*.tmp
+
+# Build outputs
+dist/
+build/
+
+# Editor settings
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
