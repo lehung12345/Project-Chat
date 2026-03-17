@@ -1,0 +1,157 @@
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --input-border: #e2e8f0;
+    --input-focus: #6366f1;
+    --error-red: #ef4444;
+}
+
+.admin-login-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+    background-size: 20px 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.login-card {
+    background: var(--card-bg);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 24px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng rung khi có lỗi */
+.shake { 
+    animation: shake-admin 0.4s ease-in-out; 
+}
+
+@keyframes shake-admin {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-8px); }
+}
+
+.login-card .header { 
+    text-align: center; 
+    margin-bottom: 32px; 
+}
+
+.login-card .header h2 { 
+    color: var(--text-main); 
+    font-size: 24px; 
+    font-weight: 700; 
+}
+
+.form-group { 
+    margin-bottom: 20px; 
+    position: relative; 
+}
+
+.form-group i {
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    color: var(--text-muted);
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px 14px 48px;
+    border: 1.5px solid var(--input-border);
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.form-group input.invalid {
+    border-color: var(--error-red);
+    background-color: #fffafb;
+}
+
+/* Thông báo lỗi nhỏ dưới input */
+.error-hint {
+    color: var(--error-red);
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.remember-me input {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--primary-color);
+}
+
+.forgot-pw {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-login:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.error-banner {
+    background-color: #fef2f2;
+    color: #b91c1c;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #fee2e2;
+}
